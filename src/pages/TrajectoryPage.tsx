@@ -76,7 +76,7 @@ interface IngestIncident {
 }
 
 // ─── Fallback data (used when JSON files are unreachable) ─────────────────────
-const FALLBACK_EVENTS: IngestEvent[] = [
+/*const FALLBACK_EVENTS: IngestEvent[] = [
   { camera_id: 'c-dwarka-mor',     plate: 'DL7CQ1234', timestamp: '2026-09-09T10:02:00.000Z', confidence: 0.94 },
   { camera_id: 'c-dwarka-flyover', plate: 'DL7CQ1234', timestamp: '2026-09-09T10:06:30.000Z', confidence: 0.88 },
   { camera_id: 'c-mohan-garden',   plate: 'DL7CQ1234', timestamp: '2026-09-09T10:12:00.000Z', confidence: 0.91 },
@@ -95,7 +95,7 @@ const FALLBACK_EVENTS: IngestEvent[] = [
   { camera_id: 'c-janakpuri-west', plate: 'DL3LZ7745', timestamp: '2026-09-09T10:30:10.000Z', confidence: 0.81 },
   { camera_id: 'c-vikaspuri',      plate: 'DL3LZ7745', timestamp: '2026-09-09T10:36:55.000Z', confidence: 0.79 },
   { camera_id: 'c-mohan-garden',   plate: 'DL3LZ7745', timestamp: '2026-09-09T10:42:03.000Z', confidence: 0.96 },
-];
+];*/
 
 const FALLBACK_INCIDENTS: IngestIncident[] = [
   { camera_id: 'c-dwarka-mor',  timestamp: '2026-09-09T10:00:00.000Z', type: 'density',        value: 12,   metadata: { vehicle_class: 'mixed', window_sec: 5 } },
@@ -108,7 +108,7 @@ const FALLBACK_INCIDENTS: IngestIncident[] = [
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-async function fetchJSON<T>(path: string, fallback: T): Promise<T> {
+/*async function fetchJSON<T>(path: string, fallback: T): Promise<T> {
   try {
     const res = await fetch(path);
     if (!res.ok) throw new Error('not ok');
@@ -116,7 +116,7 @@ async function fetchJSON<T>(path: string, fallback: T): Promise<T> {
   } catch {
     return fallback;
   }
-}
+}*/
 
 async function fetchRoadRoute(
   from: { lat: number; lng: number },
@@ -134,12 +134,12 @@ async function fetchRoadRoute(
 }
 
 /** Colour for a camera based on the worst incident it has logged. */
-function incidentColor(incidents: IngestIncident[], cameraId: string): string {
+/*function incidentColor(incidents: IngestIncident[], cameraId: string): string {
   const own = incidents.filter((i) => i.camera_id === cameraId);
   if (own.some((i) => i.type === 'overspeeding'))   return '#ef4444'; // red
   if (own.some((i) => i.type === 'faulty_driving')) return '#f59e0b'; // amber
   return '#3ba7ff'; // blue – clear / density only
-}
+}*/
 
 // ─── Playback speeds ──────────────────────────────────────────────────────────
 const PLAYBACK_SPEEDS = ['1', '2', '4'] as const;
