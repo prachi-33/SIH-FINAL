@@ -36,7 +36,7 @@ const CAMERA_SEEDS: CameraSeed[] = [
     zoneId: 'z-dwarka',
     position: [77.034794, 28.609012],
     weight: 1.4,
-    videoUrl: '/videos/IMG_7318.mp4',
+    videoUrl: 'https://www.youtube.com/embed/-H1tPNwAYOY?autoplay=1&mute=1&loop=1&playlist=-H1tPNwAYOY&controls=0',
   },
   {
     id: 'c-node-2',
@@ -45,7 +45,7 @@ const CAMERA_SEEDS: CameraSeed[] = [
     zoneId: 'z-dwarka',
     position: [77.041662, 28.602264],
     weight: 1.2,
-    videoUrl: '/videos/VID20260909183150.mp4',
+    videoUrl: 'https://www.youtube.com/embed/lxKbuIlzA7M?autoplay=1&mute=1&loop=1&playlist=lxKbuIlzA7M&controls=0',
   },
   {
     id: 'c-node-3',
@@ -54,7 +54,7 @@ const CAMERA_SEEDS: CameraSeed[] = [
     zoneId: 'z-dwarka',
     position: [77.033444, 28.603842],
     weight: 1.1,
-    videoUrl: '/videos/video_20260909_183153.mp4',
+    videoUrl: 'https://www.youtube.com/embed/yFlo2BW3TKU?autoplay=1&mute=1&loop=1&playlist=yFlo2BW3TKU&controls=0',
   },
 ];
 

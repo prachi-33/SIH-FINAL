@@ -331,6 +331,22 @@ function CameraTile({
               <div key={i} className="relative flex-1 aspect-[4/3] border-r border-line last:border-0 overflow-hidden flex items-center justify-center bg-zinc-900">
                 {feed.startsWith('#placeholder') ? (
                   <span className="text-[10px] text-white/50">{feed.split(':').pop()}</span>
+                ) : feed.includes('youtube.com/embed') ? (
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <iframe
+                      src={feed}
+                      allow="autoplay; encrypted-media"
+                      className="border-0"
+                      title="Camera feed"
+                      style={{
+                        position: 'absolute',
+                        top: '-62px',
+                        left: '-2px',
+                        width: 'calc(100% + 4px)',
+                        height: 'calc(100% + 122px)',
+                      }}
+                    />
+                  </div>
                 ) : (
                   <video
                     src={feed}
